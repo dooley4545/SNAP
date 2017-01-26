@@ -70,7 +70,7 @@
 
         var inner = document.getElementById('inner-wrap'),
 
-            cover = document.getElementById('searchCover'),
+            cover = document.getElementById('contentCover'),
 
             nav_open = false,
 
@@ -139,7 +139,7 @@
             document.getElementById('nav-close-btn').addEventListener('click', app.toggleNav, false);
 
             //close nav with main "cover"
-            document.getElementById('searchCover').addEventListener('click', app.closeNav, false);
+            document.getElementById('contentCover').addEventListener('click', app.closeNav, false);
 
             // close nav by touching the partial off-screen content
             document.addEventListener('click', function(e)
@@ -199,14 +199,14 @@ jQuery(document).ready(function($){
     var searchButton = $('.search-button'),
     searchBar = $('.search-bar'),
     searchClose = $('.search-close'),
-    searchCover = $('.search-cover'),
+    contentCover = $('.content-cover'),
     mainMenu = $('#nav_open_btn'),
     userMenu = $('#userMenu')
 
     function closeSearchBar(){
         searchButton.removeClass('search-bar-visible');
         searchBar.removeClass('is-visible');
-        searchCover.removeClass('search-bar-visible');
+        contentCover.removeClass('search-bar-visible');
     };
 
     searchButton.on('click touch', function(event){
@@ -215,7 +215,7 @@ jQuery(document).ready(function($){
             searchBar.find('form').submit();
         } else {
             searchButton.addClass('search-bar-visible');
-            searchCover.addClass('search-bar-visible');
+            contentCover.addClass('search-bar-visible');
             searchBar.addClass('is-visible').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
                 searchBar.find('input[type="search"]').focus().end().off('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend');
             });
@@ -226,7 +226,7 @@ jQuery(document).ready(function($){
     searchBar.on('click', '.search-close', function(){
         closeSearchBar();
     });
-    searchCover.on('click', function(){
+    contentCover.on('click', function(){
         closeSearchBar();
     });
     mainMenu.on('click', function(){

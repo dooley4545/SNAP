@@ -560,7 +560,7 @@ header .site-nav--sections{
     float: right;
 }
 
-.search-cover{
+.content-cover{
     display: block;
     position: fixed;
     z-index: 4;
@@ -568,7 +568,7 @@ header .site-nav--sections{
     left: 0;
     height: 100%;
     width: 100%;
-    background: rgba(0 ,0 ,0 , 0.3);
+    background: rgba(0 ,0 ,0 , 0.4);
     opacity: 0;
     visibility: hidden;
     webkit-transition: opacity 0.3s, visibility 0.3s;
@@ -582,7 +582,7 @@ header .site-nav--sections{
   visibility: visible;
 }
 
-.search-cover.search-bar-visible, .search-cover.nav-visible{
+.content-cover.search-bar-visible, .content-cover.nav-visible{
   opacity: 1;
   visibility: visible;
 }

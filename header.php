@@ -111,7 +111,7 @@
 		<button class="search-close" id="searchClose"><i class="material-icons">&#xE5CD;</i></button>
 	</div>
 	<!-- Transparent Cover Layer when search & nav is active -->
-	<div class="search-cover" id="searchCover"></div>
+	<div class="content-cover" id="contentCover"></div>
 
 <!-- 	<script>
 	$(".search-wrap").hide();
