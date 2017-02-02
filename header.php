@@ -113,13 +113,6 @@
 	<!-- Transparent Cover Layer when search & nav is active -->
 	<div class="content-cover" id="contentCover"></div>
 
-<!-- 	<script>
-	$(".search-wrap").hide();
-	$(".search-btn").click(function() {
-		$( ".search-wrap" ).slideToggle( "slow" );
-	});
-	</script> -->
-
 	<nav id="nav" class="main-navigation pushmenu-left" role="navigation">
 			<div class="block">
 				<div class="top-block">

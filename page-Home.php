@@ -18,27 +18,14 @@ get_header(); ?>
 
 	
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
 		<section id="opener">
 			<!-- particles.js container -->
 			<div id="particles-js"></div>
-
 			<!-- scripts -->
 			<script src="<?php bloginfo('template_url'); ?>/js/particles.js"></script>
 			<script src="<?php bloginfo('template_url'); ?>/js/app.js"></script>
-			<!-- <script>
-				$(window).scroll(function () {
-				    setBackgroundPosition();
-				})
-				$(window).resize(function() {
-				    setBackgroundPosition();
-				});
-				function setBackgroundPosition(){
-				    $("#particles-js").css('background-position', "50%" + (Math.max(document.body.scrollTop, document.documentElement.scrollTop) / 20) + "%");
-				}
-			</script> -->
-			
 			<!-- Content -->
 			<div class="message">
 				<div class="container">
@@ -66,7 +53,6 @@ get_header(); ?>
 					</div>
 				</div>
 			</div>
-
 		</section>
 		<section class="block" id="solutions">
 			<div class="container">
@@ -76,7 +62,7 @@ get_header(); ?>
 							<h2><?php the_field('solutions_header'); ?></h2>
 						</div>
 						<div class="col-sm-12 col-md-8">
-							<p><?php the_field('solutions_text'); ?></p>
+							<p class="text"><?php the_field('solutions_text'); ?></p>
 						</div>
 					<?php endwhile; // end of the loop. ?>
 				</div>
@@ -112,7 +98,7 @@ get_header(); ?>
 						  $(document).ready(function(){
 						    $('.owl-carousel').owlCarousel({
 						    	loop:true,
-							    margin:20,
+							    margin:30,
 							    nav:true,
 							    navText: ["<span class='glyphicon glyphicon-chevron-left'></span>","<span class='glyphicon glyphicon-chevron-right'></span>"],
 							    responsive:{
@@ -133,7 +119,6 @@ get_header(); ?>
 						  });
 						</script>
 						<br>
-						<a href="<?php the_field('solutions_link'); ?>" class="btn btn-default">Learn More</a>
 					</div>
 				</div>
 			</div>
@@ -141,37 +126,38 @@ get_header(); ?>
 		<section class="block" id="certifications">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-12 col-md-6">
-						<?php while ( have_posts() ) : the_post(); ?>
+					<?php while ( have_posts() ) : the_post(); ?>
+						<div class="col-sm-12 col-md-4">
 							<h2><?php the_field('certifications_title'); ?></h2>
-							<br>
-							<p><?php the_field('certifications_text'); ?></p>
-							<br>
-							<a href="<?php the_field('solutions_link'); ?>" class="btn btn-default">Learn More</a>
-						<?php endwhile; // end of the loop. ?>
-					</div>
-					<div class="col-sm-12 col-md-6">
-					<div class="row">
-						<?php if( have_rows('certification_images') ): ?>
+						</div>
+						<div class="col-sm-12 col-md-8">
+							<p class="text"><?php the_field('certifications_text'); ?></p>
+						</div>
+					<?php endwhile; // end of the loop. ?>
+				</div>
+				<div class="row">
+					<div class="col-sm-12 col-md-12">
+						<div class="row">
+							<?php if( have_rows('certification_images') ): ?>
 
-							<?php while( have_rows('certification_images') ): the_row(); 
+								<?php while( have_rows('certification_images') ): the_row(); 
 
-								// vars
-								$image = get_sub_field('certification_image');
-								$title = get_sub_field('certification_title');
+									// vars
+									$image = get_sub_field('certification_image');
+									$title = get_sub_field('certification_title');
 
-								?>
-								
-									<div class="col-md-6 col-sm-12">
-										<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" class="image"/>
-									  <h5><?php echo $title; ?></h5>
-									</div>
+									?>
+									
+										<div class="col-md-4 col-sm-12">
+											<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" class="image"/>
+										  <h5><?php echo $title; ?></h5>
+										</div>
 
 
-							<?php endwhile; ?>
+								<?php endwhile; ?>
 
-						<?php endif; ?>
-					</div>
+							<?php endif; ?>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -179,8 +165,17 @@ get_header(); ?>
 		<section class="block" id="contract-vehicles">
 			<div class="container">
 				<div class="row">
-
-					<div class="col-xs-12 col-sm-12 col-md-6">
+					<?php while ( have_posts() ) : the_post(); ?>
+						<div class="col-sm-12 col-md-4">
+							<h2><?php the_field('cv_title'); ?></h2>
+						</div>
+						<div class="col-sm-12 col-md-8">
+							<p class="text"><?php the_field('cv_description'); ?></p>
+						</div>
+					<?php endwhile; // end of the loop. ?>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12">
 						<ul class="home-cv">
 							<?php if( have_rows('cv_prime_list') ): ?>
 
@@ -204,26 +199,13 @@ get_header(); ?>
 								<?php endwhile; ?>
 
 							<?php endif; ?>
-
 						</ul>
 					</div>
-
-					<div class="col-sm-12 col-md-6">
-						<?php while ( have_posts() ) : the_post(); ?>
-							<h2><?php the_field('cv_title'); ?></h2>
-							<br>
-							<p><?php the_field('cv_description'); ?></p>
-							<br>
-							<a href="<?php the_field('solutions_link'); ?>" class="btn btn-default">Learn More</a>
-						<?php endwhile; // end of the loop. ?>
-					</div>
-
 				</div>
 			</div>
 		</section>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	</main><!-- #main -->
+</div><!-- #primary -->
 
 <?php
 get_sidebar();

@@ -60,7 +60,6 @@ html {
 body{
   font-family: 'Open Sans', sans-serif;
   line-height:1.5em;
-  transform: translateZ(0);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -982,7 +981,7 @@ header .site-nav--sections{
     transform-origin: 50% 0%;
   }
 
-  .csstransforms3d.csstransitions.js-nav #nav .block {
+  .csstransforms3d.csstransitions.js-ready.js-nav #nav .block {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
@@ -991,30 +990,6 @@ header .site-nav--sections{
     -o-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
-
-@media screen and (min-width: 45.0625em) {
-
-  .js-ready #nav {
-    width: 20%;
-  }
-
-  .js-ready #nav {
-    right: -20%;
-  }
-
-  .js-nav #inner-wrap {
-    right: 20%;
-  }
-
-  .csstransforms3d.csstransitions.js-nav #inner-wrap {
-    -webkit-transform: translate3d(-20%, 0, 0) scale3d(1, 1, 1);
-    -moz-transform: translate3d(-20%, 0, 0) scale3d(1, 1, 1);
-    -ms-transform: translate3d(-20%, 0, 0) scale3d(1, 1, 1);
-    -o-transform: translate3d(-20%, 0, 0) scale3d(1, 1, 1);
-    transform: translate3d(-20%, 0, 0) scale3d(1, 1, 1);
-  }
-
-}
 
 @media screen and (min-width: 768px) and (max-width: 824px) {
 
@@ -1036,6 +1011,14 @@ header .site-nav--sections{
     -ms-transform: translate3d(-33%, 0, 0) scale3d(1, 1, 1);
     -o-transform: translate3d(-33%, 0, 0) scale3d(1, 1, 1);
     transform: translate3d(-33%, 0, 0) scale3d(1, 1, 1);
+  }
+
+  .csstransforms3d.csstransitions.js-ready #nav .block {
+    -webkit-transform: translate3d(-33%, 0, 0) scale3d(0.9, 0.9, 0.9);
+    -moz-transform: translate3d(-33%, 0, 0) scale3d(0.9, 0.9, 0.9);
+    -ms-transform: translate3d(-33%, 0, 0) scale3d(0.9, 0.9, 0.9);
+    -o-transform: translate3d(-33%, 0, 0) scale3d(0.9, 0.9, 0.9);
+    transform: translate3d(-33%, 0, 0) scale3d(0.9, 0.9, 0.9);
   }
 
 }
@@ -1060,6 +1043,14 @@ header .site-nav--sections{
     -ms-transform: translate3d(-300px, 0, 0) scale3d(1, 1, 1);
     -o-transform: translate3d(-300px, 0, 0) scale3d(1, 1, 1);
     transform: translate3d(-300px, 0, 0) scale3d(1, 1, 1);
+  }
+
+  .csstransforms3d.csstransitions.js-ready #nav .block {
+    -webkit-transform: translate3d(-300px, 0, 0) scale3d(0.9, 0.9, 0.9);
+    -moz-transform: translate3d(-300px, 0, 0) scale3d(0.9, 0.9, 0.9);
+    -ms-transform: translate3d(-300px, 0, 0) scale3d(0.9, 0.9, 0.9);
+    -o-transform: translate3d(-300px, 0, 0) scale3d(0.9, 0.9, 0.9);
+    transform: translate3d(-300px, 0, 0) scale3d(0.9, 0.9, 0.9);
   }
 
 }
@@ -1199,17 +1190,6 @@ footer .dropdownInfo .material-icons{
 
 
 /*--------------------HOMEPAGE STYLES--------------------*/
-
-
-img#header-shadow {
-    width: 100%;
-    position: absolute;
-    z-index: 1;
-}
-
-body.home .site-main section.block {
-  padding: 40px 0px;
-}
 
 #opener {
   height: 450px;
@@ -1368,17 +1348,26 @@ transform: translateY(-50%);
 
 }
 
+/* ---- .block base styles ---- */
+.home-page section.block {
+  padding: 40px 0px;
+  border-bottom: solid 1px #aaaaaa;
+}
 
+.home-page section.block h2{
+  margin-top: 0px;
+}
+
+.home-page section.block .text {
+  -moz-column-count: 2;
+  -moz-column-gap: 30px;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 30px;
+  column-count: 2;
+  column-gap: 30px;
+}
 
 /* ---- Solutions Section ---- */
-#solutions {
-  background: url("img/snap-light-grey.png");
-}
-
-#solutions h2 {
-    font-size: 1.5em;
-    margin: 0;
-}
 
 
 /* ---- Solutions Owl Slider ---- */
@@ -1452,24 +1441,37 @@ transform: translateY(-50%);
 
 /* ---- Home Contract Vehicles ---- */
 .home-cv {
-    -moz-column-count: 2;
-    -moz-column-gap: 20px;
-    -webkit-column-count: 2;
-    -webkit-column-gap: 20px;
-    column-count: 2;
-    column-gap: 20px;
+    -moz-column-count: 4;
+    -moz-column-gap: 30px;
+    -webkit-column-count: 4;
+    -webkit-column-gap: 30px;
+    column-count: 4;
+    column-gap: 30px;
     list-style: none;
+    padding-left: 0px;
+}
+
+.home-cv li {
+  margin-bottom: 10px;
+}
+
+.home-cv li a{
+  display: table
+}
+
+.home-cv li a *{
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .cv-contract .image {
     width: 40px;
     height: 40px;
-    float: left;
+    margin-right: 10px;
 }
 
 .cv-contract h5 {
-    line-height: 40px;
-    margin-left: 50px;
+    
 }
 
 
