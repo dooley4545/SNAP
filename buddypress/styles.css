@@ -1,0 +1,31 @@
+/*--------------------BUDDYPRESS STYLES--------------------*/
+
+#buddypress {
+  display: table;
+  width: 100%;
+}
+
+#bp_sidebar, #bp_content {
+  display: table-cell;
+  box-sizing: border-box !important;
+  vertical-align: top;
+}
+
+#bp_sidebar{
+  background: #004280;
+  color: #fff;
+  width: 240px;
+  padding: 40px 15px;
+}
+
+#bp_content{
+  padding-bottom: 40px;
+}
+
+#bp_sidebar #item-header{
+  text-align: center;
+}
+
+#bp_sidebar #item-header-pic img.avatar, #bp_sidebar #item-header-content  {
+  float: none;
+}
