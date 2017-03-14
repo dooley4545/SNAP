@@ -15,39 +15,30 @@
  */
 
 get_header(); ?>
-<header class="entry-header backpage" id="entry-header">
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/0.4.0/trianglify.min.js"></script>
-	<script>
-	    var pattern = Trianglify({
-	        width: window.innerWidth,
-	        height: 200,
-	        cell_size: 75,
-    			x_colors: 'Blues',
-    			y_colors: 'Blues'
-	    });
-	    document.getElementById("entry-header").appendChild(pattern.canvas())
-	</script> -->
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12 col-md-12">
-					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-				</div>			
-			</div>
-			<div class="row">
-				<div class="col-sm-12 col-md-12">
-					<div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/">
-					    <?php if(function_exists('bcn_display'))
-					    {
-					        bcn_display();
-					    }?>
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
+		<header class="entry-header backpage">
+			<div class="title">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12 col-md-12">
+							<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+						</div>
 					</div>
-				</div>			
+					<div class="row">
+						<div class="col-sm-12 col-md-12">
+							<div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/">
+							    <?php if(function_exists('bcn_display'))
+							    {
+							        bcn_display();
+							    }?>
+							</div>
+						</div>			
+					</div>
+				</div>
 			</div>
-		</div>
-	</header><!-- .entry-header -->
-
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		</header><!-- .entry-header -->
+		<section class="page-content">
 			<div class="container">
 				<div class="row">
 					<div class="content col-md-8 col-sm-12">
@@ -71,8 +62,9 @@ get_header(); ?>
 					</div>
 				</div>
 			</div>
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		</section>
+	</main><!-- #main -->
+</div><!-- #primary -->
 
 <?php
 get_footer();

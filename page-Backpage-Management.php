@@ -18,27 +18,7 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-			<header class="entry-header backpage">
-				<div class="title">
-					<div class="container">
-						<div class="row">
-							<div class="col-sm-12 col-md-12">
-								<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-							</div>			
-						</div>
-						<div class="row">
-							<div class="col-sm-12 col-md-12">
-								<div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/">
-								    <?php if(function_exists('bcn_display'))
-								    {
-								        bcn_display();
-								    }?>
-								</div>
-							</div>			
-						</div>
-					</div>
-				</div>
-			</header><!-- .entry-header -->
+			<?php get_template_part( 'template-parts/headers/header', 'backpage' ); ?>
 			<section class="page-content">
 				<div class="container">
 					<div class="row">
@@ -93,14 +73,14 @@ get_header(); ?>
 
 						</div>
 						<div class="col-md-1 col-sm-1 spacer"></div>
-						<div class="col-md-3 col-sm-3 col-xs-12 sidebar">
-							<div class="wrapper">
+						<div class="col-md-3 col-sm-3 col-xs-12 sidebar" role="complementary">
+							<div class="wrapper" data-spy="affix" data-offset-top="300" data-offset-bottom="275">
 								<div class="block">
 									<?php get_template_part( 'template-parts/sidebar/sidebar', 'about' ); ?>
 								</div>
-<!-- 								<div class="block">
+		 						<div class="block">
 									<?php get_template_part( 'template-parts/sidebar/sidebar', 'join' ); ?>
-								</div> -->
+								</div>
 							</div><!-- .wrapper -->
 						</div><!-- .sidebar -->
 					</div><!-- .row -->

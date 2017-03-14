@@ -167,11 +167,7 @@
       </div>
   	</footer><!-- #colophon -->
   </div><!-- #page -->
-
-  </div>
-<!--/#inner-wrap-->
-</div>
-<!--/#outer-wrap-->
+</div><!-- #siteWrapper -->
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.touchSwipe.min.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/main-menu.js"></script>
 <?php wp_footer(); ?>

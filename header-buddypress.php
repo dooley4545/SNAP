@@ -27,6 +27,11 @@
 <?php if ( is_page_template('page-Home.php')) :?>
   <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/owl.carousel.min.js"></script>
 <?php endif; ?>
+<script>
+$(document).ready(function() {
+    $('#menu-bp').unwrap();
+});
+</script>
 
 <?php wp_head(); ?>
 </head>
@@ -52,7 +57,8 @@
 		<div class="site-nav--filler"></div>
 
 		<!-- Masthead Navigation for Desktop -->
-		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'site-nav--sections', 'container' => '' ) ); ?>
+		<?php bp_nav_menu(); ?>
+		<!-- <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'site-nav--sections', 'container' => '' ) ); ?> -->
 
 		<!-- Search Trigger -->
 		<div class="site-nav--search">

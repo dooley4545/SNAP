@@ -34,6 +34,27 @@ do_action( 'bp_before_member_header' ); ?>
 			<h4 class="user-fullname"><?php bp_displayed_user_fullname(); ?></h4>
 			<!-- <h2 class="user-nicename">@<?php bp_displayed_user_mentionname(); ?></h2> -->
 			<h5 class="user-title"><?php bp_profile_field_data( 'field=Job Title' ); ?></h5>
+			<div id="user-activity">
+				<i class="material-icons">&#xE192;</i>
+				<span class="activity" data-livestamp="<?php bp_core_iso8601_date( bp_get_user_last_activity( bp_displayed_user_id() ) ); ?>"><?php bp_last_activity( bp_displayed_user_id() ); ?></span>
+			</div>
+			<ul class="user-contact">
+				<li>
+					<a href='mailto:<?php bp_profile_field_data( 'field=Email' ); ?>'>
+						<i class="material-icons">&#xE0BE;</i>
+						<span><?php bp_profile_field_data( 'field=Email' ); ?></span>
+					</a>
+				</li>
+				<li>
+					<a href='tel:<?php bp_profile_field_data( 'field=Phone Number' ); ?>'>
+						<i class="material-icons">&#xE0CD;</i>
+						<span><?php bp_profile_field_data( 'field=Phone Number' ); ?></span>
+					</a>
+				</li>
+			</ul>
+
+
+			
 		<?php endif; ?>
 
 		<div id="item-buttons"><?php
@@ -44,8 +65,6 @@ do_action( 'bp_before_member_header' ); ?>
 			 * @since 1.2.6
 			 */
 			do_action( 'bp_member_header_actions' ); ?></div><!-- #item-buttons -->
-
-		<span>Active <span class="activity" data-livestamp="<?php bp_core_iso8601_date( bp_get_user_last_activity( bp_displayed_user_id() ) ); ?>"><?php bp_last_activity( bp_displayed_user_id() ); ?></span></span>
 
 		<?php
 
